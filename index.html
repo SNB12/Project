@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="type/css" href="./style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Fredoka One', cursive;
+    }
+
+    .navbar {
+      width: 100%;
+      background-color:navy;
+      height: 17em;
+      text-align: center;
+    }
+
+    .list {
+      list-style-type: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Fredoka One', cursive;
+      color:white;
+      font-size: 300%;
+      font: bold;
+    }
+
+    .center {
+      margin: auto;
+      width: 60%;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: black;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+    .nav{
+      background-color:blueviolet;
+      width:100%;
+      height:3em;
+      display:block;
+      text-align: center;
+    }
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+
+      .sidenav a {
+        font-size: 18px;
+      }
+    }
+
+    .topleft {
+      position: absolute;
+      top: 8px;
+      left: 16px;
+      padding: 0mm;
+      background-color: black;
+      border-radius: 10%;
+    }
+
+    /* Button used to open the contact form - fixed at the bottom of the page */
+    .open-button {
+      background-color: violet;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      opacity: 0.8;
+      position: relative;
+      top: 60px;
+      right: 300px;
+      width: 100px;
+      border-radius: 15%;
+    }
+
+    /* The popup form - hidden by default */
+    .form-popup {
+      background-color: rgba(0,0,0,0.6);
+      display:none;
+      position: fixed;
+      top:3px;
+      left:500px;
+}
+
+    /* Add styles to the form container */
+    .form-container {
+      width: 300px;
+      padding: 5px;
+      background-color: white;
+      text-align: left;
+    }
+
+    /* Full-width input fields */
+    .form-container input[type=text],
+    .form-container input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    /* When the inputs get focus, do something */
+    .form-container input[type=text]:focus,
+    .form-container input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    /* Set a style for the submit/login button */
+    .form-container .btn {
+      background-color: violet;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 15%;
+      margin-bottom: 10px;
+      opacity: 0.8;
+    }
+
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover,
+    .open-button:hover {
+      opacity: 1;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="list">
+      <h1>The Landing Page</h1>
+      <p style="color:white;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, amet!</p>
+    </div>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">Home</a>
+      <a href="#">Portfolio</a>
+      <a href="#">blog</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="topleft">
+      <span style="font-size:30px;color:whitesmoke;font-size:10mm;cursor:pointer" onclick="openNav()">&#9776;</span>
+    </div>
+    <button class="open-button" onclick="openForm()">Sign Up</button>
+    <div class="form-popup" id="myForm">
+
+      <form action="/action_page.php" class="form-container">
+        <nav class="nav">
+          <div id="center">
+        <h2>Sign up</h2>
+        </nav>
+        <p>Register with us to get offers, support and more</p>
+        <label for="name">Name</label>
+        <input type="text" placeholder="Enter Name" name="name" required>
+ <label for="email">Email</label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+<label for="psw">Password</label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+        <label for="psw">Confirm Password</label>
+        <input type="password" placeholder="Confirm Password" name="psw" required>
+        <button type="button" class="btn submit" onclick="closeForm()">Submit</button>
+      </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="center">
+    <h2>What is this landing page about?</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia iure accusamus ab consectetur eos provident ipsa est perferendis architecto. Provident, quaerat asperiores. Quo esse minus repellat sapiente, impedit obcaecati necessitatibus.
+
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente optio officia ipsa. Cum dignissimos possimus et non provident facilis saepe!</p>
+    <h2>Tell me more</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat eaque delectus explicabo qui reprehenderit? Aspernatur ad similique minima accusamus maiores accusantium libero autem iusto reiciendis ullam impedit esse quibusdam, deleniti laudantium rerum beatae, deserunt nemo neque, obcaecati exercitationem sit. Earum.</p>
+    <h2>Benefits</h2>
+    <ul>
+      <li>potential customers</li>
+      <li>users</li>
+      <li>early Adopters</li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse quam nostrum, fugiat, itaque natus officia laborum dolorum id accusantium culpa architecto tenetur fuga? Consequatur provident rerum eius ratione dolor officiis doloremque minima optio dignissimos doloribus odio debitis vero cumque itaque excepturi a neque, expedita nulla earum accusamus repellat adipisci veritatis quam. Ipsum fugiat iusto pariatur consectetur quas libero dolor dolores dolorem, nostrum ducimus doloremque placeat accusamus iste, culpa quaerat consequatur?</p>
+  </div>
+  <script src="./script.js"></script>
+
+</body>
+
+</html>
